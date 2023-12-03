@@ -1,0 +1,45 @@
+body, html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+.sidebar.songListIsShow {
+    height: calc(100% - 42px);
+}
+
+.sidebar {
+    position: absolute;
+    left: 0;
+    top: 62px;
+    width: 220px;
+    background-color: #0d0d0d;
+    -ms-overflow-style: none;
+}
+
+a{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: #fff;
+}
+.user-icon i> .fa-user{
+    width: 50%;
+}
+
+button {
+    display: block;
+    box-sizing: border-box;
+    width: 158px;
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 100px;
+    color: #463402;
+    font-size: 16px;
+    line-height: 40px;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(133.3deg,rgba(254,234,205,1) 0%,rgba(251,206,132,1) 100%);
+}
