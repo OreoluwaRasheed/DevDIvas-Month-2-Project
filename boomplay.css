@@ -1,0 +1,30 @@
+nav{
+    display: flex;
+    gap: 2rem;
+    padding: 0px;
+    align-items: center;
+    margin-top: 0px;
+}
+
+img{
+    width: 100px;
+} 
+*{
+    font-size: medium;
+    background-color: black;
+    color: white;
+}
+h2{
+    font-size: xx-large;
+}
+button{
+    border-radius: 30px;
+    border-color: white;
+}
+
+@media screen {max-width: 500;
+    padding: 0px;
+    gap: 1px;
+
+
+}
