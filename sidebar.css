@@ -8,10 +8,10 @@ body, html{
     background-color: black;
 }
 
-.sidebar.songListIsShow {
-    height: calc(100% - 42px);
+.sidebar {
     display: grid;
     place-items: center;
+    font-size: .9rem;
 }
 
 .sidebar {
@@ -27,23 +27,28 @@ body, html{
 a{
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.2rem;
     text-decoration: none;
     color: #fff;
 }
-.user-icon i> .fa-user{
-    width: 50%;
-}
-.userInfo{
-    
-}
+
 
 button {
+    margin-top: 1em;
     padding: .8em 2em;
     border-radius: 100px;
     color: #463402;
     font-size: 12px;
     font-weight: 500;
     text-align: center;
+    cursor: pointer;
     background: linear-gradient(133.3deg,rgba(254,234,205,1) 0%,rgba(251,206,132,1) 100%);
+}
+.side-nav{
+    display: grid;
+    gap: 1rem;
+}
+.side-nav section{
+    display: grid;
+    gap: 1rem;
 }
