@@ -13,6 +13,7 @@ body, html{
 input{
     position: absolute;
     top: 0;
+    transform: translateX(-100px);
 }
 .toggle-icon{
     font-size: 2rem;
@@ -27,6 +28,7 @@ input{
 input[type="checkbox"]:checked  ~  .sidebar{
     transform: translateX(0);
 }
+
 .sidebar {
     position: absolute;
     left: 0;
@@ -75,4 +77,10 @@ button {
 .second div{
     color: #fff;
     cursor: pointer;
+}
+
+@media(min-width:610px){
+    .toggle-icon{
+        display:none ;
+    }
 }
