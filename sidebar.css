@@ -83,4 +83,7 @@ button {
     .toggle-icon{
         display:none ;
     }
+    .sidebar{
+        transform: translateX(0px);
+    }
 }
