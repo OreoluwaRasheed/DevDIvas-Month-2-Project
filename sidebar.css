@@ -47,8 +47,18 @@ button {
 .side-nav{
     display: grid;
     gap: 1rem;
+    margin-top: 1em;
 }
 .side-nav section{
     display: grid;
     gap: 1rem;
+}
+.nav_home{
+    color: #00ffff;
+}
+.side-nav a:hover{
+    color: #00ffff;
+}
+.second div{
+    color: #fff;
 }
