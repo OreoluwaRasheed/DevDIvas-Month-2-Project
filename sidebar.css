@@ -35,6 +35,7 @@ input[type="checkbox"]:checked  ~  .sidebar{
     font-size: .9rem;
     transform: translateX(-250px);
     transition: transform 250ms ease-in-out;
+    padding-top: 1em;
 }
 
 
