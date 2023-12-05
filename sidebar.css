@@ -1,12 +1,17 @@
-body, html{
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body, html{
     background-color: black;
 }
 
 .sidebar.songListIsShow {
     height: calc(100% - 42px);
+    display: grid;
+    place-items: center;
 }
 
 .sidebar {
@@ -18,6 +23,7 @@ body, html{
     -ms-overflow-style: none;
 }
 
+
 a{
     display: flex;
     align-items: center;
@@ -28,18 +34,16 @@ a{
 .user-icon i> .fa-user{
     width: 50%;
 }
+.userInfo{
+    
+}
 
 button {
-    display: block;
-    box-sizing: border-box;
-    width: 158px;
-    height: 40px;
-    margin-left: 20px;
+    padding: .8em 2em;
     border-radius: 100px;
     color: #463402;
-    font-size: 16px;
-    line-height: 40px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 500;
     text-align: center;
     background: linear-gradient(133.3deg,rgba(254,234,205,1) 0%,rgba(251,206,132,1) 100%);
 }
