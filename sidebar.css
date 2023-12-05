@@ -17,8 +17,12 @@ body, html{
     display: grid;
     place-items: center;
     font-size: .9rem;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
 }
-
+input[type="checkbox"]:checked  ~  .sidebar{
+    transform: translateX(0);
+}
 .sidebar {
     position: absolute;
     left: 0;
