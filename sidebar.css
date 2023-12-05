@@ -10,7 +10,11 @@ body, html{
 .top-nav{
     padding: 1em 2em;
 }
-.top-nav a{
+input{
+    position: absolute;
+    top: 0;
+}
+.toggle-icon{
     font-size: 2rem;
 }
 .sidebar {
