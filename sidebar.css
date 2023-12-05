@@ -18,13 +18,7 @@ input{
 .toggle-icon{
     font-size: 2rem;
 }
-.sidebar {
-    display: grid;
-    place-items: center;
-    font-size: .9rem;
-    transform: translateX(-250px);
-    transition: transform 250ms ease-in-out;
-}
+
 input[type="checkbox"]:checked  ~  .sidebar{
     transform: translateX(0);
 }
@@ -36,6 +30,11 @@ input[type="checkbox"]:checked  ~  .sidebar{
     width: 220px;
     background-color: #0d0d0d;
     -ms-overflow-style: none;
+    display: grid;
+    place-items: center;
+    font-size: .9rem;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
 }
 
 
