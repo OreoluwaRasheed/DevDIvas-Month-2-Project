@@ -10,7 +10,9 @@ body, html{
 .top-nav{
     padding: 1em 2em;
 }
-.top-nav
+.top-nav a{
+    font-size: 2rem;
+}
 .sidebar {
     display: grid;
     place-items: center;
