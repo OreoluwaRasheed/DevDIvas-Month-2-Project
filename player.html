@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./player.css" />
+  </head>
+  <body>
+    <section class="mobile">
+      <div class="nowPlaying">
+        <article class="audioInfo">
+          <img src="./wind&fire.jpg" alt="ty_album_picture" />
+          <div class="names">
+            <p>Wind and Fire</p>
+            <p class="singerName">TY Bello</p>
+          </div>
+        </article>
+        <article class="audioControl">
+          <button><i class="bx bx-share-alt"></i></button>
+          <button><i class="fa-solid fa-circle-play"></i></button>
+        </article>
+      </div>
+      <nav>
+        <div class="mobile-nav">
+          <img src="./icon_music_selected-TQWS55WV.svg" alt="boomplay-logo" />
+          <p>Music</p>
+        </div>
+        <div class="mobile-nav">
+          <i class="bx bx-search"></i>
+          <p>Search</p>
+        </div>
+        <div class="mobile-nav">
+          <img src="./icon_library_normal-RGEV557H.svg" alt="library" />
+          <p>Library</p>
+        </div>
+      </nav>
+    </section>
+
+    <section class="desktop">
+      <div class="audio_rail"></div>
+      <div class="timer">
+        <time class="currentTime">00:00</time>
+        " / "
+        <time class="duration">03:50</time>
+      </div>
+      <article class="audioInfo">
+        <img src="./wind&fire.jpg" alt="ty_album_picture" />
+        <p>Wind and Fire <span>Lyrics</span></p>
+        <p class="singerName">Ty Bello</p>
+      </article>
+      <article class="audioControl">
+        <button><i class="fa-solid fa-backward-step"></i></button>
+        <button><i class="fa-solid fa-circle-play"></i></button>
+        <button><i class="fa-solid fa-forward-step"></i></button>
+      </article>
+      <article class="playOperation">
+        <div class="mode">
+          <button><i class="fa-solid fa-repeat"></i></button>
+          <button><i class="fa-solid fa-shuffle"></i></button>
+          <button>
+            <i class="bx bx-sort bx-rotate-90"></i>
+          </button>
+          <button><i class="fa-solid fa-repeat">1</i></button>
+        </div>
+        <button><i class="bx bx-import"></i></button>
+        <button><i class="bx bx-heart"></i></button>
+        <button><i class="bx bx-share-alt"></i></button>
+        <button>
+          <img src="./btn_playlist_hover-HF5KEMDI.svg" alt="music list" />
+        </button>
+        <button><i class="fa-regular fa-square-plus"></i></button>
+      </article>
+      <button class="playerRetract">
+        <i class="fa-solid fa-angle-down"></i>
+      </button>
+    </section>
+    <nav></nav>
+  </body>
+</html>

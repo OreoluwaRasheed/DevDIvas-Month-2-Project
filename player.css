@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.desktop {
+    display: none;
+}
+
+.mobile, .desktop {
+    background-color: #0d0d0d;
+    width: 100%;
+    color: #bababa;
+    position: fixed;
+    bottom: 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+button {
+    padding: 0;
+    background: none;
+    border: none;
+    margin: 0;
+    color: #bababa;
+}
+
+.nowPlaying {
+    display: flex;
+    justify-content: space-between;
+    border-top: .5px #bababa solid;
+    border-bottom: .5px #bababa solid;
+    padding: 10px 10px 0 0;
+}
+
+.mobile nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.audioInfo {
+    flex-basis: 80%;
+    display: flex;
+}
+
+.audioInfo img {
+    width: 80px;
+    height: 80px;
+    margin-left: 15px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.names {
+    margin-left: .8rem;
+    font-size: 1.6rem;
+    color: #fff;
+    text-align: start;
+}
+
+.singerName {
+    font-size: 1.2rem;
+    color: grey;
+    font-weight: 400;
+
+}
+
+.audioControl {
+    flex-basis: 20%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.audioControl i {
+    font-size: 50px;
+    padding: 0;
+}
+
+.fa-circle-play {
+    color: #0ff;
+}
+
+.mobile-nav {
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.mobile-nav p {
+    padding-top: 6px;
+    font-size: 20px;
+    line-height: .28rem;
+
+}
+
+.mobile-nav img {
+    width: 50px;
+    color: #bababa;
+}
+
+.mobile-nav i {
+    font-size: 50px;
+}
