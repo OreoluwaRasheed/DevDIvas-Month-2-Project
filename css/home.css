@@ -627,10 +627,10 @@ footer {
 }
 .social_footer {
   /* justify-content: space-between; */
-  margin-left: 80px;
+  margin-left: 10px;
   /* top:0; */
 
-  max-width: 400px;
+  max-width: 350px;
 }
 
 .social_download {
