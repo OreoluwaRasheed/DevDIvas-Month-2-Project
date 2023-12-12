@@ -1140,7 +1140,11 @@ hr {
 }
 .retrieve {
   text-decoration: none;
-  color: #000;
+  color: #000 !important;
+  width: 100%;
+  text-align: center !important;
+  margin: 0 auto !important;
+  justify-content: center !important;
 }
 .backdrop {
   margin-left: unset !important;
