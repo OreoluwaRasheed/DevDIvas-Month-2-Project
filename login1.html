@@ -1,1437 +1,786 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./css/home.css">
-  <link
-  href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-  rel="stylesheet"
-/>
-<link
-  href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500&display=swap"
-  rel="stylesheet"
-/>
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-  rel="stylesheet"
-/>
-  <!-- <style>
-  
-    .log-container{
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/home.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
 
-      width: 100%;
-      height: 100%;
-      z-index: 3000;
-      position: fixed;
-
-      top: 0;
-      left: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-    }
-
-    .backdrop{
-      background-color: rgba(0, 0, 0,0.6);
-      width: 100%;
-      height: 100%;
-    }
-
-
-    .content-form{
-      top: 7%;
-    margin: 0 auto;
-    /* width: 100%; */
-    min-width: 400px;
-    padding-top: 20px;
-    min-height: 81%;
-    display: flex;
-    position: absolute;
-    background-color: rgb(69, 67, 67);
-    flex-direction: column;
-    align-items: center;;
-}
-
-
-.fields{
-  margin-top: 20px;
-
-}
-    
-    .log-container input{
-      top: unset;
-      position: unset;
-      transform: unset;
-      border: .5px solid grey;
-      border-radius:3px;
-      height:39px;
-      width:350px;
-      background-color: rgb(69, 67, 67) ;
-      padding-left: 8px;
-      margin-top: 14px;
-      font-size: 13px;
-      color: #ffffff;
-    }
-
-    .log-container .group {
-      flex:1;
-    }
-    .log-container  .code{
-      border: 1px solid grey;
-      background-color: rgb(69, 67, 67);
-      border-radius: 3px;
-      width: 238px;
-      height:39px;
-      margin-right:8px
-    }
-    .log-container  .get_code{
-      width: 90px;
-      height: 37px;
-      border-radius:3px;
-      border: 1.5px solid aqua;
-      background-color: rgb(69, 67, 67);
-    }
-    .log-container .get_code::placeholder{
-      color:aqua;
-      font-weight: 400;
-      font-size: 15px;
-    }
-    .log-container  .tickbox {
-  
-      display: flex;
-    width: 100%;
-    align-items: center;
-    } 
-    .log-container  .tickbox input[type="checkbox"] 
-    {
-      display:none;
-     
-    }  
-    .log-container  .tickbox label{
-      display:flex;
-      align-items: center;
-      margin-right: 20px;
-      cursor:pointer;
-    
-      
-    }
-    .log-container  .tickbox label:before{
-      content: "";
-      display: inline-block;
-      width:10px;
-      height:10px;
-      border-radius: 50%;
-      background-color: rgb(69, 67, 67);
-      margin-right: 8px;
-      margin-left: 30px;
-      border: 1px solid grey;
-      margin-top: 10px;
-      
-    }
-    .log-container  .tickbox input[type="checkbox"]:checked + label:before {
-      background-color:aqua; 
-  }
-
-  
-  .log-container  .tickbox label span {
-      font-size: 12px;
-      color: #fff;
-      margin-top: 10px;
-  }
-
-  .log-container .tickbox span{
-    margin-left: 0px;
-  }
-
-
-
-  .log-container    button{
-      background-color: aqua;
-      border: .5px solid grey;
-      border-radius:3px;
-      height:39px;
-      width:360px;
-      padding-left: 8px;
-      margin-top: 14px;
-      font-size: 16px;
-      font-weight: 600;
-      }  
-      
-      .log-container    .term{
-        display: flex;
-        align-items: center;
-        color:#333;
-      }
-      .log-container  .term input[type="checkbox"] {
-        display: none;
-    }
-
-    .log-container  .term label {
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="body">
+    <aside>
+      <div class="image">
+        <img src="./images/boomplay.svg" alt="Boomplay" />
+      </div>
+        <div class="side_content">
+        <div class="text">
+          <i class='bx bxs-user-circle'></i>
+          <strong><a href="login.html">Log in</a></strong>
+          <strong style="padding: 0 8px;">/</strong>
+          <strong><a href="signup.html"> Signup</a></strong>       
+        </div>
         
-        padding-left: 30px;
-        cursor: pointer;
-        font-size: 14px;
-        margin-top:15px;
-    }
-
-    .log-container  .term label:before {
-        content: '';
-       display:inline-block;
-        
-        transform: translateY(-50%);
-        width: 15px;
-        height: 15px;
-        border: 2px solid grey;
-        border-radius: 50%;
-        margin-top: 14px;
-    }
-
-    .log-container  .term input[type="checkbox"]:checked + label:before {
-        background-color: aqua;
-        border-color: aqua;
-    }
-
-    .log-container  .term label span {
-        margin-left: 10px;
-        font-size: 14px;
-        color: #fff;
-        top: 0;
-        margin: top -5px;
-    }
-
-    .log-container a{
-      color: aqua;
-    font-size: 14px;
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    margin-left: 50px;
-    margin-bottom: 5px;
-    }
-
-    .log-container  .social{
-       position: inherit;
-    bottom: 30px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    }
-
-    .log-container  .facebook, .google{
-      width:45px;
-      background-color: rgb(69, 67, 67); 
-      border-radius: 50%;
-      margin-right: 20px;
-     
-      
-    } 
-    .log-container  .twitter{
-      width:48px;
-      height:48px;
-      background-color: rgb(69, 67, 67); 
-      border-radius: 50%;
-      margin-right: 20px;
-        
-    } 
-
-    .head-links{
-
-display: flex;
-  gap: 20px;
-  width: 100%;
-  font-size: 15px;
-  justify-content: flex-start;
-  padding-left: 30px;
-  color: #aaa;
-  align-items: center;
-
-}
-
-
-.head-links h2 a {
-  color: #aaa;
-  margin-left: unset;
-  margin-top: unset
-}
-
-
-
-.head-links .active{
-font-size: 30px;
-color: white;
-}
-
-.backdrop{
-  margin-left: unset !important;
-}
-
-  </style> -->
-</head>
-<body>
-
-    <!-- BEGINNING OF TOP NAV -->
-    <section class="top-header">
-          <nav>
-              <div class="header-left">
-                <div class="image">
-                  <img src="./images/boomplay.svg" alt="Boomplay">
-              </div>
-              <!-- <h2> Boomplay</h2> -->
-              <form action="/search" method="get" class="nav-search">
-                <!-- The input element for the search query with a name attribute (used to identify the input in the server-side script) -->
-                <input type="text" name="search" placeholder="Search Artists, Songs, Albums, Videos">
-                <!-- The submit button -->
-                <!-- <button type="submit">Search</button> -->
-            </form>
-              </div>
-              <div class="header-right">
-                <a href="#" class="btcoin-btn header-btn">Get Bcoins</a>
-                <a href="#" class="download-btn header-btn">Download</a>
-              </div>
-      
-          </nav>
-    </section>
-    <!-- END OF TOP NAV -->
-    <!-- SIDE NAV -->
-    <header class="top-nav">
-      <input type="checkbox" checked class="toggle-sidebar" id="toggle-sidebar" />
-      <label for="toggle-sidebar" class="toggle-icon">
-        <a><i class="fa-solid fa-bars"></i></a>
-      </label>
-      <article class="sidebar scrollView songListIsShow">
-        <article class="userInfo">
-          <!-- <div> -->
-          <div class="login_info" href="#">
-            <div>
-              <!-- Userlogin icon -->
-              <?xml version="1.0" encoding="UTF-8"?>
-              <svg
-                width="40px"
-                height="40px"
-                viewBox="0 0 63 63"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <title>09042323-888C-433C-9555-6B9031B83BD2</title>
-                <desc>Created with Sketch.</desc>
-                <defs>
-                  <circle id="path-1" cx="31.5" cy="31.5" r="31.5"></circle>
-                </defs>
-                <g
-                  id="控件"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                >
-                  <g id="user_male">
-                    <g>
-                      <mask id="mask-2" fill="white">
-                        <use xlink:href="#path-1"></use>
-                      </mask>
-                      <use
-                        id="椭圆形"
-                        fill="#666666"
-                        xlink:href="#path-1"
-                      ></use>
-                      <g mask="url(#mask-2)" fill="#A6A6A6" id="形状_1">
-                        <g transform="translate(3.882353, 7.000000)">
-                          <path
-                            d="M29.4409057,1.08330343 L29.616268,1.10516119 C40.8314248,2.29146523 38.8562411,13.8055521 38.8562411,19.4378344 C43.2423348,17.3488753 41.4356366,25.5712194 38.8562411,27.2574674 C38.5133396,27.8348955 37.7961651,28.0730188 37.1740267,27.8160126 C36.7808091,31.3629144 34.5386276,32.68918 33.8518373,32.9265704 L33.8086471,32.9400824 L33.8095979,37.3112813 C57.6330342,45.2213706 54.2814156,47.2066233 55.0917842,47.9029299 L55.1176471,47.9236403 L55.1176471,56.8603637 C36.8002013,57.0465454 18.466868,57.0465454 0.117647059,56.8603637 L0.117647059,56.8603637 L0.117647059,47.9236403 C1.02604284,47.246125 -2.64342752,45.3012705 21.4627049,37.3112813 L21.4627049,37.3112813 L21.4626471,32.9400824 L21.43293,32.9309206 C20.7771656,32.7114034 18.6012309,31.4505649 18.1253099,28.0795051 L18.092108,27.8160126 C17.4691433,28.0731016 16.7511818,27.8351137 16.4070899,27.2574674 C13.8215263,25.5712194 12.0137066,17.3488753 16.4070899,19.4378344 C16.4070899,16.3294815 15.8044277,11.4296878 17.1527463,7.46309721 C16.3507674,6.88711536 15.8659776,6.14534518 15.8659776,5.19493152 C15.8659776,0.762766451 24.5684169,0.465460515 29.4409057,1.08330343 Z"
-                          ></path>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <!-- End of userlogin icon -->
-            <div class="text">
-              <strong><a href="login.html">Login</a></strong>
-              <strong><a href="#">/</a></strong>
-              <strong><a href="signup.html"> Signup</a></strong>
-            </div>
-          </div>
-          <!-- </div> -->
-
-          <div class="subscribeNowToWrap">
-            <button class="subscribeNowTo_event log_clickEvent_subscribe">
-              Subscribe Now
-            </button>
-          </div>
-        </article>
-
         <nav class="side-nav">
           <section>
-            <div>
-              <a href="#">Music</a>
-            </div>
-            <a href="#">
-              <!-- Home Icon -->
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-              >
-                <path
-                  d="M2.39683 13.9988C3.34177 14.0015 6.86139 13.9988 8.73015 13.9988C9.22872 13.9987 9.72238 13.9002 10.1828 13.7091C10.6433 13.5179 11.0615 13.2377 11.4135 12.8846C11.7655 12.5316 12.0444 12.1125 12.2341 11.6514C12.4239 11.1904 12.5208 10.6964 12.5194 10.1979C12.5194 8.10567 10.8635 6.39589 8.76962 6.39589C10.5589 6.39589 11.9413 4.95791 11.9413 3.20032C11.9407 2.35524 11.6057 1.54473 11.0094 0.945865C10.4132 0.347001 9.60413 0.00845873 8.75906 0.00419973C7.31385 -0.00524967 6.17214 0.00419973 4.23835 0.00419973C4.11488 0.00418389 3.99507 0.0461579 3.89861 0.123228C3.80215 0.200298 3.73476 0.307882 3.70752 0.428311L3.43571 1.63339C3.43338 1.6439 3.43326 1.65479 3.43536 1.66535C3.43745 1.67591 3.44172 1.68592 3.44788 1.69475C3.45405 1.70358 3.46198 1.71104 3.47117 1.71664C3.48037 1.72225 3.49062 1.72589 3.5013 1.72733L6.68575 2.15033L7.52508 2.2615C8.34717 2.37266 8.91469 2.9563 8.89857 3.75061C8.89334 4.07246 8.7808 4.38335 8.57881 4.63397C8.37681 4.8846 8.09693 5.06062 7.78355 5.13411C7.50299 5.20223 7.20852 5.18552 6.93747 5.08609C6.66642 4.98667 6.43099 4.80901 6.26101 4.57564C6.09104 4.34226 5.99419 4.06368 5.98272 3.7752C5.97125 3.48671 6.04569 3.20132 6.1966 2.95519V2.95519L3.29508 2.56888C3.2758 2.56619 3.25621 2.57088 3.24023 2.58201C3.22426 2.59314 3.21308 2.60989 3.20892 2.62891L2.1189 7.47145C2.11658 7.48197 2.11646 7.49285 2.11855 7.50341C2.12065 7.51397 2.12492 7.52399 2.13108 7.53282C2.13725 7.54165 2.14518 7.5491 2.15437 7.55471C2.16356 7.56031 2.17382 7.56395 2.18449 7.56539L6.63461 8.15459L7.11486 8.21795C8.07036 8.34858 8.82743 9.05172 8.79908 10.0283C8.79046 10.3057 8.71629 10.5771 8.58263 10.8203C8.44897 11.0635 8.25962 11.2716 8.03008 11.4275C7.80055 11.5835 7.53734 11.6829 7.26202 11.7176C6.98669 11.7523 6.70706 11.7213 6.44601 11.6271C6.18497 11.5329 5.94993 11.3783 5.76013 11.1759C5.57033 10.9734 5.43116 10.7289 5.35402 10.4623C5.27688 10.1958 5.26395 9.91473 5.3163 9.64221C5.36865 9.36969 5.48479 9.11343 5.65521 8.89442L1.97939 8.41139C1.96012 8.40883 1.9406 8.41357 1.92466 8.42468C1.90871 8.43579 1.8975 8.45246 1.89323 8.47142L1.03445 12.2801C0.988227 12.4853 0.988523 12.6982 1.03531 12.9032C1.0821 13.1083 1.1742 13.3002 1.30485 13.4651C1.43549 13.6299 1.60138 13.7634 1.79033 13.8557C1.97929 13.9481 2.18652 13.9969 2.39683 13.9988V13.9988Z"
-                  fill="#00FFFF"
-                ></path>
-              </svg>
-              <!-- Home Icon ends -->
-              Home
-            </a>
-            <!-- Trending Icon -->
-            <a class="nav_trending nav_trending_icon" href="/trending-songs">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  opacity="0.5"
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M6.43866 0H6.15593C6.06167 0 6.06167 0.177114 6.06167 0.265705C6.3444 1.15143 6.3444 3.18867 2.95165 5.93445C-0.158381 8.4145 0.501318 12.9318 4.55375 13.6404C3.61134 11.6918 4.27104 9.83172 4.27104 9.83172C4.27104 9.83172 4.93074 14.1718 8.41774 13.9947C10.3026 13.8175 11.245 12.8432 11.8105 11.8689C13.6011 8.76882 12.1875 5.22584 11.1508 3.9858C11.0565 3.89728 10.9623 3.89728 10.9623 3.89728C10.8681 3.89728 10.8681 3.9858 10.8681 4.07441C10.8681 4.69441 10.7738 5.75733 9.8314 6.46594C9.54869 6.73165 9.07744 6.46594 9.1717 6.11163C9.36017 4.69441 9.54869 1.59433 6.43866 0"
-                  fill="white"
-                />
-              </svg>
-              <!-- Trending Icon ends -->
-              Trending
-            </a>
-            <!-- New Icon -->
-            <a class="nav_newSongs nav_newSongs_icon" href="#">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  opacity="0.5"
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M8.53125 0.167988V4.09721C8.07412 3.85557 7.55304 3.71875 7 3.71875C5.18782 3.71875 3.71875 5.18782 3.71875 7C3.71875 8.81218 5.18782 10.2812 7 10.2812C8.81218 10.2812 10.2812 8.81218 10.2812 7V0.815108C12.4936 1.99126 14 4.31971 14 7C14 10.866 10.866 14 7 14C3.13401 14 0 10.866 0 7C0 3.13401 3.13401 0 7 0C7.52598 0 8.03842 0.0580124 8.53125 0.167988ZM7 5.46875C7.84569 5.46875 8.53125 6.15431 8.53125 7C8.53125 7.84569 7.84569 8.53125 7 8.53125C6.15431 8.53125 5.46875 7.84569 5.46875 7C5.46875 6.15431 6.15431 5.46875 7 5.46875Z"
-                  fill="white"
-                />
-              </svg>
-              <!--New Icon ends  -->
-              New
-            </a>
-
-            <a class="log_clickEvent nav_artists nav_artists_icon" href="#">
-              <!-- Artists Icon starts -->
-              <?xml version="1.0" encoding="UTF-8"?>
-              <svg
-                width="12px"
-                height="14px"
-                viewBox="0 0 12 14"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
-                <title>E27F745C-1C76-49F4-AF48-7245DE0ACE39</title>
-                <desc>Created with Sketch.</desc>
-                <g
-                  id="控件"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                  opacity="0.5"
-                >
-                  <g
-                    id="nav_artists"
-                    transform="translate(-1.000000, 0.000000)"
-                    fill="#FFFFFF"
-                  >
-                    <g id="编组-2" transform="translate(1.000000, 0.000000)">
-                      <path
-                        d="M11.5282774,12.8133734 L11.5282774,8.72280877 C11.5418201,8.42760562 11.4336427,8.13951794 11.2282444,7.92378961 C11.0228461,7.70806127 10.737605,7.58294436 10.4371204,7.57677438 C10.4371204,7.57677438 9.56521087,7.59733191 8.06995053,7.59733191 L3.45832691,7.59733191 C2.0971163,7.59733191 1.28207045,7.57677438 1.28207045,7.57677438 C0.6454319,7.57677438 5.32907052e-15,8.10127964 5.32907052e-15,8.72280877 L5.32907052e-15,12.671392 C5.32907052e-15,13.5180933 0.760527083,13.8352941 1.28207045,13.8352941 L10.4371204,13.8352941 C11.194521,13.8345256 11.5282774,13.5180933 11.5282774,12.8133734 Z M5.7260342,8.23692093 L6.33179832,8.23692093 C6.72743575,8.23692093 7.04816325,8.55226274 7.04816325,8.94125657 L7.04816325,11.1549377 C7.04816325,11.5439316 6.72743575,11.8592734 6.33179832,11.8592734 L5.7260342,11.8592734 C5.33039678,11.8592734 5.00966928,11.5439316 5.00966928,11.1549377 L5.00966928,8.94106444 C5.00977718,8.55214564 5.33047308,8.23692093 5.7260342,8.23692093 L5.7260342,8.23692093 Z M5.69164243,11.8592734 L6.36794876,11.8592734 L6.36794876,13.8345256 L5.69164243,13.8345256 L5.69164243,11.8592734 Z M8.25226599,2.28772481 L8.25226599,3.90158715 C8.23159647,5.1845799 7.15758016,6.2084862 5.85265845,6.18923702 L5.5702942,6.18923702 C4.26537249,6.2084862 3.19135618,5.1845799 3.17068665,3.90158715 L3.17068665,2.28772481 C3.19146281,1.00480755 4.26544758,-0.0189826893 5.5702942,0.000267066122 L8.25226599,0.000267066122 L8.25226599,2.28772481 Z"
-                        id="圆角矩形_95"
-                      ></path>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-              <!-- Artist Icon ends -->
-
-              Artists
-            </a>
-            <a class="log_clickEvent nav_video nav_video_icon" href="/video">
-              <!-- Video Icon starts -->
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  opacity="0.5"
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M14 7.00002C14 7.00002 14 4.39602 13.6801 3.14862C13.5044 2.46122 12.985 1.91942 12.3235 1.73322C11.1272 1.40002 7 1.40002 7 1.40002C7 1.40002 2.8749 1.40002 1.6765 1.73322C1.0178 1.91662 0.4977 2.45912 0.3199 3.14862C0 4.39602 0 7.00002 0 7.00002C0 7.00002 0 9.60402 0.3199 10.8514C0.4956 11.5388 1.015 12.0806 1.6765 12.2668C2.8749 12.6 7 12.6 7 12.6C7 12.6 11.1272 12.6 12.3235 12.2668C12.9822 12.0834 13.5023 11.5409 13.6801 10.8514C14 9.60402 14 7.00002 14 7.00002ZM9.24946 7.73363C9.75294 7.43154 9.75294 6.70185 9.24946 6.39976L6.53896 4.77346C6.02056 4.46242 5.36102 4.83584 5.36102 5.4404V8.69299C5.36102 9.29755 6.02056 9.67097 6.53897 9.35993L9.24946 7.73363Z"
-                  fill="white"
-                />
-              </svg>
-              <!-- Video Icon ends -->
-              Videos</a
-            >
-
-            <a class="log_clickEvent nav_playlists nav_playlists_icon" href="#">
-              <!-- Playlist Icon Starts -->
-              <?xml version="1.0" encoding="UTF-8"?>
-              <svg
-                width="14px"
-                height="14px"
-                viewBox="0 0 14 14"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
-                <title>462117FC-F924-4A21-ADF7-2742E2276CBE</title>
-                <desc>Created with Sketch.</desc>
-                <g
-                  id="控件"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                  opacity="0.5"
-                >
-                  <g id="nav_playlists" fill="#FFFFFF">
-                    <g>
-                      <path
-                        d="M9.52462578,7 L13.2253742,7 C13.6531882,7 14,7.34822297 14,7.77777778 C14,8.20733258 13.6531882,8.55555556 13.2253742,8.55555556 L9.52462578,8.55555556 C9.09681178,8.55555556 8.75,8.20733258 8.75,7.77777778 C8.75,7.34822297 9.09681178,7 9.52462578,7 Z"
-                        id="椭圆_19-path"
-                      ></path>
-                      <path
-                        d="M9.52493447,9.33406023 L13.2254276,9.33406023 C13.6532121,9.33406023 14,9.68212048 14,10.1114746 C14,10.5408286 13.6532121,10.8888889 13.2254276,10.8888889 L9.52493447,10.8888889 C9.09694998,10.8888889 8.75,10.5406659 8.75,10.1111111 C8.75,9.68155631 9.09694998,9.33333333 9.52493447,9.33333333 L9.52493447,9.33406023 Z"
-                        id="椭圆_19-path"
-                      ></path>
-                      <path
-                        d="M9.52485731,11.6672801 L13.2254143,11.6672801 C13.6532062,11.6672801 14,12.0588936 14,12.5419734 C14,13.0250531 13.6532062,13.4166667 13.2254143,13.4166667 L9.52485731,13.4166667 C9.09691543,13.4166667 8.75,13.0249158 8.75,12.5416667 C8.75,12.0584175 9.09691543,11.6666667 9.52485731,11.6666667 L9.52485731,11.6672801 Z"
-                        id="椭圆_19-path"
-                      ></path>
-                      <path
-                        d="M8.34297321,0 C8.4172431,0 8.49031133,0.00439613843 8.56184094,0.0129004926 C8.84192048,-0.0300564945 9.09939868,0.0290844815 9.27338361,0.203074303 L12.746916,3.67639178 C13.1122843,4.04177041 12.9712436,4.77535379 12.4316008,5.31494333 C11.8921607,5.85453287 11.158587,5.99563766 10.793016,5.63025903 L9.916,4.753 L9.916,6.416 L9.38921251,6.41666667 C8.99377104,6.41666667 8.26573145,6.78812387 8.1762712,7.48604738 L8.16718129,7.62997164 L8.16718129,8.23662412 C8.16718129,8.91170672 8.47192723,8.8432766 8.47192723,8.8432766 L8.45883268,8.84668267 C8.4005024,8.86618175 8.16718129,8.99177084 8.16718129,9.75325533 L8.16718129,9.75325533 L8.16718129,10.0565816 C8.16718129,10.8140994 8.47192723,10.9665603 8.47192723,10.9665603 C8.26610335,11.2254358 8.15829927,11.5473413 8.16718129,11.876539 L8.16718129,11.876539 L8.16832911,12.8205724 C6.76149492,14.0163288 4.79197856,14.3378347 3.06458195,13.6239804 C1.20982539,12.8574939 6.52612531e-06,11.0485239 6.52612531e-06,9.04163284 C-0.00212376018,7.72876522 0.517356991,6.46881794 1.44418175,5.53896593 C2.24742987,4.73309418 3.29961355,4.23237196 4.42054556,4.11174526 L4.50261415,4.10387445 C4.96546366,4.18070373 5.65678607,4.40540977 5.74139337,5.06261761 L5.74997783,5.1999102 L5.75031314,6.65049479 C5.51666223,6.49936848 5.2397037,6.41490054 4.94917309,6.41672407 C4.1463236,6.4193063 3.49754791,7.07217599 3.50000653,7.87502124 C3.50000653,8.46567781 3.85633544,8.99799578 4.4023914,9.22316565 C4.94844737,9.44833553 5.57640217,9.32188302 5.99274492,8.902913 C6.31755132,8.57605696 6.46351696,8.12153352 6.40345603,7.67887801 L6.4078692,7.66593992 L6.41667319,7.60374324 L6.41667319,1.34466415 C6.41667319,0.602026645 7.12124268,0 7.99037318,0 L8.34297321,0 Z"
-                        id="形状结合"
-                      ></path>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-
-              <!-- Playlist Icon ends -->
-              Playlists</a
-            >
-            <a class="log_clickEvent nav_charts nav_charts_icon" href="/charts">
-              <!-- ChartsIcon Starts -->
-              <?xml version="1.0" encoding="UTF-8"?>
-              <svg
-                width="14px"
-                height="13px"
-                viewBox="0 0 14 13"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
-                <title>5024B1BA-CE0A-46B9-855F-86C8F819231F</title>
-                <desc>Created with Sketch.</desc>
-                <g
-                  id="控件"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                  opacity="0.5"
-                >
-                  <g
-                    id="nav_Charts"
-                    transform="translate(0.000000, -1.000000)"
-                    fill="#FFFFFF"
-                  >
-                    <g id="圆角矩形_96_拷贝_2">
-                      <path
-                        d="M6.40255537,1 L7.39522241,1 C8.11658408,1 8.70136326,1.55777858 8.70136326,2.24583333 L8.70136326,12.7541667 C8.70136326,13.4422214 8.11658408,14 7.39522241,14 L6.40255537,14 C5.6811937,14 5.09641452,13.4422214 5.09641452,12.7541667 L5.09641452,2.24583333 C5.09641452,1.55777858 5.6811937,1 6.40255537,1 L6.40255537,1 Z M11.320081,4.40419444 L12.312748,4.40419444 C13.0341097,4.40419444 13.6188889,4.96197303 13.6188889,5.65002778 L13.6188889,12.7541667 C13.6188889,13.4422214 13.0341097,14 12.312748,14 L11.320081,14 C10.5987193,14 10.0139402,13.4422214 10.0139402,12.7541667 L10.0139402,5.65002778 C10.0139402,4.96197303 10.5987193,4.40419444 11.320081,4.40419444 L11.320081,4.40419444 Z M1.48502973,7.5 L2.47769678,7.5 C3.19905845,7.5 3.78383762,8.05777858 3.78383762,8.74583333 L3.78383762,12.7541667 C3.78383762,13.4422214 3.19905845,14 2.47769678,14 L1.48502973,14 C1.13861964,14 0.806397609,13.8687429 0.561448685,13.6351039 C0.316499761,13.4014648 0.178888889,13.0845822 0.178888889,12.7541667 L0.178888889,8.74583333 C0.178888889,8.05777858 0.763668064,7.5 1.48502973,7.5 Z"
-                      ></path>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-              <!-- ChartsIcon ends -->
-              Charts</a
-            >
-            <a class="log_clickEvent nav_genres nav_genres_icon" href="/genres">
-              <!-- Genres Icon starts -->
-              <?xml version="1.0" encoding="UTF-8"?>
-              <svg
-                width="14px"
-                height="14px"
-                viewBox="0 0 14 14"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
-                <title>D6BBEA61-AF4E-4C33-BF05-4E8EF6E6B8C1</title>
-                <desc>Created with Sketch.</desc>
-                <g
-                  id="控件"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                  opacity="0.5"
-                >
-                  <g id="nav_Genres" fill="#FFFFFF">
-                    <g id="形状结合">
-                      <path
-                        d="M7,0 C8.70079211,0 10.2599124,0.606568997 11.4728357,1.61518167 L11.4722222,4.83285185 L11.3542666,4.84348851 C11.199423,4.87024867 11.0561745,4.94650202 10.9469955,5.06242519 C10.8105218,5.20732915 10.7391079,5.4016603 10.7492778,5.6004537 L10.7492778,5.6004537 L10.7492778,8.03828472 C10.7492778,8.24184603 10.8301566,8.43706691 10.9741159,8.58098674 C11.1180753,8.72490656 11.3133183,8.80567595 11.5168796,8.80567595 L11.5168796,8.80567595 L12.1488241,8.80567595 C12.3523854,8.80567595 12.5476284,8.72490656 12.6915878,8.58098674 C12.8355471,8.43706691 12.9164259,8.24184603 12.9164259,8.03828472 L12.9164259,8.03828472 L12.9164259,5.6004537 C12.9265326,5.40180439 12.8551772,5.20762683 12.7188477,5.06278915 C12.5825181,4.91795146 12.3930104,4.83498568 12.1941134,4.8330625 L12.1941134,4.8330625 L12.1947453,2.30794249 C13.3167441,3.54937007 14,5.19489356 14,7 C14,10.8659932 10.8659932,14 7,14 C3.13400675,14 0,10.8659932 0,7 C0,3.13400675 3.13400675,0 7,0 Z M7,3.74822454 C5.204094,3.74822454 3.74822454,5.204094 3.74822454,7 C3.74822454,8.795906 5.204094,10.2517755 7,10.2517755 C8.795906,10.2517755 10.2517755,8.795906 10.2517755,7 C10.2517755,5.204094 8.795906,3.74822454 7,3.74822454 Z M7,5.5541111 C7.58493099,5.55402591 8.11230933,5.90632552 8.33619209,6.446715 C8.56007485,6.98710448 8.4363661,7.60914874 8.02275742,8.02275742 C7.60914874,8.4363661 6.98710448,8.56007485 6.446715,8.33619209 C5.90632552,8.11230933 5.55402591,7.58493099 5.5541111,7 C5.5541111,6.20145762 6.20145762,5.5541111 7,5.5541111 Z"
-                      ></path>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-              <!-- Genres Icon ends -->
-              Genres</a
-            >
+            <h1>Music</h1>
+            <a href="#"><img src="./images/icon_music_selected-TQWS55WV.svg" alt="boomplay-logo" />Home</a>
+            <a href="#"><i class='bx bxs-hot'></i>Trending</a>
+            <a href="#"><i class='bx bxs-disc'></i>New</a>
+            <a href="#"><i class='bx bx-user'></i>Artists</a>
+            <a href="#"><i class='bx bxl-youtube'></i>Videos</a>
+            <a href="#"><i class='bx bxs-playlist'></i>Playlists</a>
+            <a href="#"><i class='bx bxs-bar-chart-alt-2'></i>Charts</a>
+            <a href="#"><i class='bx bx-doughnut-chart'></i>Genres</a>
           </section>
 
           <section class="second">
-            <div>Library</div>
-
-            <a class="nav_addAPlaylist" href="#">
-              <!-- MyPlaylist Icon -->
-              <?xml version="1.0" encoding="UTF-8"?>
-              <svg
-                width="14px"
-                height="14px"
-                viewBox="0 0 14 14"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
-                <title>462117FC-F924-4A21-ADF7-2742E2276CBE</title>
-                <desc>Created with Sketch.</desc>
-                <g
-                  id="控件"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                  opacity="0.5"
-                >
-                  <g id="nav_playlists" fill="#FFFFFF">
-                    <g>
-                      <path
-                        d="M9.52462578,7 L13.2253742,7 C13.6531882,7 14,7.34822297 14,7.77777778 C14,8.20733258 13.6531882,8.55555556 13.2253742,8.55555556 L9.52462578,8.55555556 C9.09681178,8.55555556 8.75,8.20733258 8.75,7.77777778 C8.75,7.34822297 9.09681178,7 9.52462578,7 Z"
-                        id="椭圆_19-path"
-                      ></path>
-                      <path
-                        d="M9.52493447,9.33406023 L13.2254276,9.33406023 C13.6532121,9.33406023 14,9.68212048 14,10.1114746 C14,10.5408286 13.6532121,10.8888889 13.2254276,10.8888889 L9.52493447,10.8888889 C9.09694998,10.8888889 8.75,10.5406659 8.75,10.1111111 C8.75,9.68155631 9.09694998,9.33333333 9.52493447,9.33333333 L9.52493447,9.33406023 Z"
-                        id="椭圆_19-path"
-                      ></path>
-                      <path
-                        d="M9.52485731,11.6672801 L13.2254143,11.6672801 C13.6532062,11.6672801 14,12.0588936 14,12.5419734 C14,13.0250531 13.6532062,13.4166667 13.2254143,13.4166667 L9.52485731,13.4166667 C9.09691543,13.4166667 8.75,13.0249158 8.75,12.5416667 C8.75,12.0584175 9.09691543,11.6666667 9.52485731,11.6666667 L9.52485731,11.6672801 Z"
-                        id="椭圆_19-path"
-                      ></path>
-                      <path
-                        d="M8.34297321,0 C8.4172431,0 8.49031133,0.00439613843 8.56184094,0.0129004926 C8.84192048,-0.0300564945 9.09939868,0.0290844815 9.27338361,0.203074303 L12.746916,3.67639178 C13.1122843,4.04177041 12.9712436,4.77535379 12.4316008,5.31494333 C11.8921607,5.85453287 11.158587,5.99563766 10.793016,5.63025903 L9.916,4.753 L9.916,6.416 L9.38921251,6.41666667 C8.99377104,6.41666667 8.26573145,6.78812387 8.1762712,7.48604738 L8.16718129,7.62997164 L8.16718129,8.23662412 C8.16718129,8.91170672 8.47192723,8.8432766 8.47192723,8.8432766 L8.45883268,8.84668267 C8.4005024,8.86618175 8.16718129,8.99177084 8.16718129,9.75325533 L8.16718129,9.75325533 L8.16718129,10.0565816 C8.16718129,10.8140994 8.47192723,10.9665603 8.47192723,10.9665603 C8.26610335,11.2254358 8.15829927,11.5473413 8.16718129,11.876539 L8.16718129,11.876539 L8.16832911,12.8205724 C6.76149492,14.0163288 4.79197856,14.3378347 3.06458195,13.6239804 C1.20982539,12.8574939 6.52612531e-06,11.0485239 6.52612531e-06,9.04163284 C-0.00212376018,7.72876522 0.517356991,6.46881794 1.44418175,5.53896593 C2.24742987,4.73309418 3.29961355,4.23237196 4.42054556,4.11174526 L4.50261415,4.10387445 C4.96546366,4.18070373 5.65678607,4.40540977 5.74139337,5.06261761 L5.74997783,5.1999102 L5.75031314,6.65049479 C5.51666223,6.49936848 5.2397037,6.41490054 4.94917309,6.41672407 C4.1463236,6.4193063 3.49754791,7.07217599 3.50000653,7.87502124 C3.50000653,8.46567781 3.85633544,8.99799578 4.4023914,9.22316565 C4.94844737,9.44833553 5.57640217,9.32188302 5.99274492,8.902913 C6.31755132,8.57605696 6.46351696,8.12153352 6.40345603,7.67887801 L6.4078692,7.66593992 L6.41667319,7.60374324 L6.41667319,1.34466415 C6.41667319,0.602026645 7.12124268,0 7.99037318,0 L8.34297321,0 Z"
-                        id="形状结合"
-                      ></path>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-              <!-- MyPlaylist Icon ends -->
-              Add Playlist
-            </a>
-
-            <a
-              class="log_clickEvent nav_favourites nav_favourites_icon"
-              href="/favourites"
-            >
-              <!-- Favourites Icon -->
-              <?xml version="1.0" encoding="UTF-8"?>
-              <svg
-                width="14px"
-                height="14px"
-                viewBox="0 0 14 14"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
-                <title>2DACB702-157D-489E-9E90-89113EFA40E1</title>
-                <desc>Created with Sketch.</desc>
-                <g
-                  id="控件"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                  opacity="0.5"
-                >
-                  <g id="nav_favourites" fill="#FFFFFF">
-                    <g id="nav_favourites_pre">
-                      <path
-                        d="M13.1133718,6.40113969 L7.66202582,13.5265802 C7.05149933,14.1578066 6.93625283,14.1578066 6.32572634,13.5265802 L0.886511528,6.40113969 C0.338747328,5.56866627 0.0319322632,4.60092298 0,3.60494197 C0,1.72479235 1.44641355,0.000233269184 3.49938761,0.000233269184 C4.95723249,0.000233269184 6.10526492,0.782151575 6.99877522,1.70916331 C7.93824415,0.835803487 9.04171771,0 10.5004958,0 C12.5534698,0 14,1.72455908 14,3.60470871 C14.0069065,4.60703738 13.6965949,5.5858907 13.1133718,6.40113969 Z"
-                        id="收藏"
-                      ></path>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-              <!-- Favourites Icon ends-->
-              Favourites
-            </a>
-            <a
-              class="log_clickEvent nav_myPlaylists nav_myPlaylists_icon"
-              href="#"
-            >
-              <!-- My playlist Icon -->
-              <?xml version="1.0" encoding="UTF-8"?>
-              <svg
-                width="14px"
-                height="14px"
-                viewBox="0 0 14 14"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
-                <title>8F389E31-46AF-4894-B294-4B4C8C1A633B</title>
-                <desc>Created with Sketch.</desc>
-                <g
-                  id="控件"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                  opacity="0.5"
-                >
-                  <g id="nav_my-playlist" fill="#FFFFFF">
-                    <g>
-                      <path
-                        d="M8.33333333,9.5 L12.3333333,9.5 C12.7935706,9.5 13.1666666,9.89175084 13.1666666,10.375 C13.1666666,10.8582492 12.7935706,11.25 12.3333333,11.25 L8.33333333,11.25 C7.87309604,11.25 7.5,10.8582492 7.5,10.375 C7.5,9.89175084 7.87309604,9.5 8.33333333,9.5 L8.33333333,9.5 Z M8.33333333,7 L12.3333333,7 C12.7935706,7 13.1666666,7.39175084 13.1666666,7.875 C13.1666666,8.35824916 12.7935706,8.75 12.3333333,8.75 L8.33333333,8.75 C7.87309604,8.75 7.5,8.35824916 7.5,7.875 C7.5,7.39175084 7.87309604,7 8.33333333,7 L8.33333333,7 Z M8.33333329,12 L12.3333333,12 C12.7935706,12 13.1666666,12.3917508 13.1666666,12.875 C13.1666666,13.3582492 12.7935706,13.75 12.3333333,13.75 L8.33333329,13.75 C7.87309602,13.75 7.5,13.3582491 7.5,12.875 C7.5,12.3917509 7.87309602,12 8.33333329,12 L8.33333329,12 Z"
-                        id="椭圆_19_拷贝"
-                      ></path>
-                      <path
-                        d="M1.26724427,7.66671345 C1.26724427,7.66671345 2.07141831,7.68771328 3.4177397,7.68771328 L6.63,7.687 L6.62840458,7.72004636 L6.62840458,8.41337427 C6.62840458,9.18503491 6.97956058,9.10670218 6.97956058,9.10670218 C6.97956058,9.10670218 6.62840458,9.15236849 6.62840458,10.146694 L6.62840458,10.146694 L6.62840458,10.493358 C6.62840458,11.3590179 6.97956058,11.5333499 6.97956058,11.5333499 C6.74316528,11.8281219 6.6188232,12.1963763 6.62840458,12.5733417 L6.62840458,12.5733417 L6.628,13.999 L1.12773363,13.9997715 C0.896617296,13.9860027 0.674314386,13.9059223 0.487920715,13.769291 L0.380610388,13.6806042 C0.141285789,13.4581985 0.00377664382,13.1481197 0,12.8223398 L0,12.8223398 L0,8.82637104 C0.0569052968,8.17173341 0.606732715,7.66858532 1.26724427,7.66671345 Z M8.15499497,0.000106750521 L8.15499497,3.9484092 C8.14247097,5.23903553 7.08072449,6.2752664 5.78335168,6.26305776 L5.50457135,6.26305776 C4.20719854,6.2752664 3.14545206,5.23903553 3.13292806,3.9484092 L3.13292806,2.31508864 C3.14526828,1.02433163 4.20706894,-0.0121013425 5.50457135,0.000106750521 L8.15499497,0.000106750521 Z"
-                        id="椭圆_19_拷贝_3"
-                      ></path>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-              <!-- My playlist Icon ends -->
-              My Playlists
-            </a>
+            <h1>Library</h1>
+            <a href="#"><i class='bx bxs-plus-square'></i>Add Playlist</a>
+            <a href="/favourites"><i class='bx bxs-heart'></i>Favourites</a>
+            <a href="#"><i class='bx bxs-user-detail'></i>My Playlists</a>
           </section>
 
           <section>
-            <div>
-              <a class="log_clickEvent" href="#">Buzz</a>
-            </div>
-            <a
-              class="log_clickEvent nav_buzzRecommended nav_buzzRecommended_icon"
-              href="/buzz"
-            >
-              <!-- Recommended Icon -->
-              <?xml version="1.0" encoding="UTF-8"?>
-              <svg
-                width="14px"
-                height="14px"
-                viewBox="0 0 14 14"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
-                <title>976B518F-4580-444B-84B6-7946094C6A3C</title>
-                <desc>Created with Sketch.</desc>
-                <g
-                  id="控件"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                  fill-opacity="0.5"
-                >
-                  <g id="nav_Recommended" fill="#FFFFFF" fill-rule="nonzero">
-                    <g id="icon_recommend">
-                      <path
-                        d="M13.6957207,6.04441635 L13.6957207,6.04441635 L10.1789531,8.710556 L11.5337465,13.0487381 C11.5550601,13.1156915 11.5665563,13.1880568 11.5665563,13.2630862 C11.5665563,13.6417851 11.2737788,13.9490402 10.9119761,13.9490402 C10.7683455,13.9490402 10.636243,13.9003666 10.5284122,13.8186352 L10.5279964,13.8186352 L6.98435102,11.132423 L3.44070561,13.8186352 L3.44028989,13.8186352 C3.332459,13.9003667 3.20035656,13.9490402 3.05672595,13.9490402 C2.69492325,13.9490402 2.40212977,13.6417683 2.40212977,13.2630862 C2.40212977,13.1880568 2.41365795,13.1156915 2.43495552,13.0487381 L3.78978094,8.710556 L0.272533625,6.04441635 L0.272949344,6.04441635 C0.108884578,5.91982537 0.00191710937,5.71752421 0.00191710937,5.48885051 C0.00191710937,5.11015157 0.294694609,4.80289642 0.656513297,4.80289642 L0.656513297,4.80289642 L5.00986572,4.80289642 L6.35831147,0.485725255 C6.4405597,0.205261525 6.68987867,0.00118431185 6.98435102,0.00118431185 C7.27883936,0.00118431185 7.52815831,0.205278275 7.61040655,0.485725255 L8.95878834,4.80291317 L13.3121728,4.80291317 L13.3121728,4.80291317 C13.6739755,4.80291317 13.9667689,5.11016832 13.9667689,5.48886726 C13.9667689,5.71752421 13.8598175,5.91982537 13.6957207,6.04441635 Z"
-                        id="路径"
-                      ></path>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-              <!-- Recommended Icon Ends -->
-              Recommended
-            </a>
+            <h1>Buzz</h1>
+            <a href="/buzz"><i class='bx bxs-star'></i> Recommended </a>
           </section>
 
           <section>
-            <div>
-              <a href="#"> Podcast</a>
-            </div>
-            <a
-              class="log_clickEvent nav_podcastRecommended nav_podcastRecommended_icon"
-              href="#"
-            >
-              <!-- Podcasts Icon -->
-              <?xml version="1.0" encoding="UTF-8"?>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                width="14px"
-                height="14px"
-                viewBox="0 0 14 14"
-                version="1.1"
-              >
-                <title>web-podcast</title>
-                <g
-                  id="图标"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                >
-                  <g
-                    id="podcast-icon合集"
-                    transform="translate(-65.000000, -84.000000)"
-                  >
-                    <g
-                      id="web-podcast"
-                      transform="translate(65.000000, 84.000000)"
-                    >
-                      <rect id="矩形" x="0" y="0" width="14" height="14"></rect>
-                      <g
-                        id="podcast"
-                        transform="translate(0.349169, -0.000000)"
-                        fill="#979797"
-                        fill-rule="nonzero"
-                      >
-                        <path
-                          d="M6.65083135,8.67933492 C7.58866208,8.67933492 8.35447311,9.08106428 8.40142045,9.58624444 C8.40293389,9.61889193 8.39997499,9.65159303 8.39262601,9.68343862 L7.44759041,13.7785929 L7.43226808,13.7787763 C7.40250358,13.9024386 7.05738511,14 6.63602177,14 C6.19511694,14 5.83769295,13.8931795 5.83769295,13.7614098 C5.83769295,13.7521215 5.83946887,13.7429572 5.84292476,13.7339455 L4.90902731,9.68344078 L4.90131369,9.63514279 L4.90131369,9.63514279 L4.90024226,9.58624444 C4.9471896,9.08106428 5.71300063,8.67933492 6.65083135,8.67933492 Z M6.65083135,-5.68434189e-14 C10.3239841,-5.68434189e-14 13.3016627,2.97767862 13.3016627,6.65083135 C13.3016627,9.55325467 11.4424831,12.0214433 8.85007571,12.9294453 L9.22437218,11.3088113 C10.8624632,10.4018303 11.9714964,8.65584511 11.9714964,6.65083135 C11.9714964,3.71230917 9.58935354,1.33016627 6.65083135,1.33016627 C3.71230917,1.33016627 1.33016627,3.71230917 1.33016627,6.65083135 C1.33016627,8.65584511 2.43919954,10.4018303 4.07729052,11.3088113 L4.45144995,12.9293973 C1.85911413,12.0213563 2.13162821e-13,9.55320352 2.13162821e-13,6.65083135 C2.13162821e-13,2.97767862 2.97767862,-5.68434189e-14 6.65083135,-5.68434189e-14 Z M6.65083135,2.66033254 C8.85472299,2.66033254 10.6413302,4.44693972 10.6413302,6.65083135 C10.6413302,7.62084257 10.2952298,8.51001771 9.71978122,9.20160448 C9.61420692,8.82142575 9.27743429,8.4836481 8.79062873,8.23112094 C9.11778998,7.78968638 9.3111639,7.24284132 9.3111639,6.65083135 C9.3111639,5.18157026 8.12009245,3.99049881 6.65083135,3.99049881 C5.18157026,3.99049881 3.99049881,5.18157026 3.99049881,6.65083135 C3.99049881,7.24284132 4.18387273,7.78968638 4.51090264,8.23164863 C4.02422841,8.4836481 3.68745579,8.82142575 3.58115039,9.20058063 C3.00643295,8.51001771 2.66033254,7.62084257 2.66033254,6.65083135 C2.66033254,4.44693972 4.44693972,2.66033254 6.65083135,2.66033254 Z M6.65083135,5.48693587 C7.29363308,5.48693587 7.81472684,6.00802963 7.81472684,6.65083135 C7.81472684,7.29363308 7.29363308,7.81472684 6.65083135,7.81472684 C6.00802963,7.81472684 5.48693587,7.29363308 5.48693587,6.65083135 C5.48693587,6.00802963 6.00802963,5.48693587 6.65083135,5.48693587 Z"
-                          id="形状结合"
-                        ></path>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-
-              <!-- Podcasts Icon -->
-              Recommended</a
-            >
-            <br />
+              <h1 > Podcast</h1>
+            <a href="#"><i class='bx bx-podcast'></i>Recommended</a>
           </section>
         </nav>
-      </article>
-    </header>
-    <!-- SLIDER -->
+      </div>
+    </aside>
+    <main>
+        <div class="mobile">
+          <div class="top">
+            <div class="drop">
+                <button class="dropbtn"><i class='bx bx-menu'></i></button>
+                <div class="side_content">
+                    <div class="text">
+                      <i class='bx bxs-user-circle'></i>
+                      <strong><a href="login.html">Login</a></strong>
+                      <strong><a href="#">/</a></strong>
+                      <strong><a href="signup.html"> Signup</a></strong>       
+                    </div>
+                    
+                    <nav class="side-nav">
+                      <section>
+                        <h1>Music</h1>
+                        <a href="#"><img src="./images/icon_music_selected-TQWS55WV.svg" alt="boomplay-logo" />Home</a>
+                        <a href="#"><i class='bx bxs-hot'></i>Trending</a>
+                        <a href="#"><i class='bx bxs-disc'></i>New</a>
+                        <a href="#"><i class='bx bx-user'></i>Artists</a>
+                        <a href="#"><i class='bx bxl-youtube'></i>Videos</a>
+                        <a href="#"><i class='bx bxs-playlist'></i>Playlists</a>
+                        <a href="#"><i class='bx bxs-bar-chart-alt-2'></i>Charts</a>
+                        <a href="#"><i class='bx bx-doughnut-chart'></i>Genres</a>
+                      </section>
+            
+                      <section class="second">
+                        <h1>Library</h1>
+                        <a href="#"><i class='bx bxs-plus-square'></i>Add Playlist</a>
+                        <a href="/favourites"><i class='bx bxs-heart'></i>Favourites</a>
+                        <a href="#"><i class='bx bxs-user-detail'></i>My Playlists</a>
+                      </section>
+            
+                      <section>
+                        <h1>Buzz</h1>
+                        <a href="/buzz"><i class='bx bxs-star'></i> Recommended </a>
+                      </section>
+            
+                      <section>
+                          <h1 > Podcast</h1>
+                        <a href="#"><i class='bx bx-podcast'></i>Recommended</a>
+                      </section>                    </nav>
+                </div>
+                <div class="image">
+                    <img src="./images/boomplay.svg" alt="Boomplay" />
+                </div>
+            </div>
+            <div class="header-right">
+              <a href="#" class="btcoin-btn header-btn">Get Bcoins</a>
+              <a href="#" class="download-btn header-btn">Get APP</a>
+            </div>
+          </div>
+          <div class="header-left">
+            <input type="text" name="search" placeholder="Search Artists, Songs, Albums, Videos"/>
+          </div>
+        </div>
 
+        <nav class="topnav">
+            <div class="header-left">
+              <input type="text" name="search" placeholder="Search Artists, Songs, Albums, Videos"/>
+            </div>
+            <div class="header-right">
+              <a href="#" class="btcoin-btn header-btn">Get Bcoins</a>
+              <a href="#" class="download-btn header-btn">Download</a>
+            </div>
+        </nav>
+        <section class="slider_container">
+            <div class="slider-wrapper">
+                <div class="slider">
+                <img id="slide1" src="./images/7.PNG" alt="Pic 1">
+                <img id="slide2" src="./images/2.png" alt="Pic 2">
+                <img id="slide3" src="./images/3.jpg" alt="Pic 3">
+                <img id="slide4" src="./images/4.jpg" alt="Pic 4">
+                <img id="slide5" src="./images/2.png" alt="Pic 5">
+                <img id="slide6" src="./images/7.png" alt="Pic 6">
+                <img id="slide7" src="./images/4.jpg" alt="Pic 7">
+                <img id="slide8" src="./images/3.jpg" alt="Pic 8">
+            </div>
+            <div class="slider-nav">
+                <a href="#slide1"></a>
+                <a href="#slide2"></a>
+                <a href="#slide3"></a>
+                <a href="#slide4"></a>
+                <a href="#slide5"></a>
+                <a href="#slide6"></a>
+                <a href="#slide7"></a>
+                <a href="#slide8 "></a>
+            </div>
+            </div>
+        </section>
+        <!-- ENDING SECTION OF SLIDER -->
+        <!-- INNER SECTIONS -->
+        <!-- Begiining of Inner SWction -->
+      
+      
+          <section class="content">
+            <div class="heading">
+                <h2>
+                    <span>Hotlist</span>
+                    <a class="more" href="media.html">More>></a>
+                </h2>
+            </div>
+        
+            <!-- Image Display Here-->
+            <div class="inner_container">
+                <ul class="image-gallery">
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image1.jpg" alt="image">                 
+                                  
+                            </div>
+                            <strong>Daily Trending</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image2.jpg" alt="image">  
+                            </div>
+                            <strong>Daily Hot List</strong>
+                        </a>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image3.jpg" alt="image">    
+                            </div>
+                            <strong>Afrobeats &amp; U</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image4.jpg" alt="image">        
+                            </div>
+                            <strong>Pop &amp; U</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image5.jpg" alt="image">     
+                            </div>
+                            <strong>RnB &amp; U</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image6.jpg" alt="image">     
+                               
+                            </div>
+                            <strong>Hip Hop &amp; U </strong>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="heading">
+                <h2>
+                    <!--<a class="heading1" href="#">Monthly Recap - December 2023</a>-->
+                    <span>Monthly Recap - December 2023</span>
+                    <a class="more" href="media.html">More>></a>
+                </h2>
+            </div>
+        
+            <div class="inner_container">
+                <ul class="image-gallery">
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image7.jpg" alt="image">                 
+                                  
+                            </div>
+                            <strong>Midweek Music</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image8.jpg" alt="image">  
+                            </div>
+                            <strong>Let Them Cook</strong>
+                        </a>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image9.jpg" alt="image">    
+                            </div>
+                            <strong>Top Yoruba Songs </strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image10.jpg" alt="image">        
+                            </div>
+                            <strong>Top Igbo Songs</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image11.jpg" alt="image">     
+                            </div>
+                            <strong>Hot Hausa Hits</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image12.jpg" alt="image">     
+                               
+                            </div>
+                            <strong>Hot Picks of The Week</strong>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="heading">
+                <h2>
+                    <!--<a class="heading1" href="#">Monthly Recap - December 2023</a>-->
+                    <span>Weekly Charts</span>
+                    <a class="more" href="media.html">More>></a>
+                </h2>
+            </div>
+        
+            <div class="inner_container">
+                <ul class="image-gallery">
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image13.jpg" alt="image">                 
+                                  
+                            </div>
+                            <strong>Top 100 Nigeria</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image14.jpg" alt="image">  
+                            </div>
+                            <strong>Top 100 Africa</strong>
+                        </a>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image15.jpg" alt="image">    
+                            </div>
+                            <strong>Top 100 International</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image16.jpg" alt="image">        
+                            </div>
+                            <strong>Top 100 Christian&amp;Gospel</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image17.jpg" alt="image">     
+                            </div>
+                            <strong>Top 100 Ghana<strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image18.jpg" alt="image">     
+                               
+                            </div>
+                            <strong>Top 100 Kenya</strong>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="heading">
+                <h2>
+                    <!--<a class="heading1" href="#">Monthly Recap - December 2023</a>-->
+                    <span>Just Vibes</span>
+                    <a class="more" href="media.html">More>></a>
+                </h2>
+            </div>
+        
+            <div class="inner_container">
+                <ul class="image-gallery">
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image1a.jpg" alt="image">                 
+                                  
+                            </div>
+                            <strong>Sunday Praise</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image2a.jpg" alt="image">  
+                            </div>
+                            <strong>Saturday Party</strong>
+                        </a>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image3a.jpg" alt="image">    
+                            </div>
+                            <strong>Night Sleep</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image4a.jpg" alt="image">        
+                            </div>
+                            <strong>Morning Yoga</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image5a.jpg" alt="image">     
+                            </div>
+                            <strong>Workout Dance Mix<strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image6a.jpg" alt="image">     
+                               
+                            </div>
+                            <strong>Wedding Love Songs Mix</strong>
+                    </li>
+                </ul>
+            </div>
+        
+             <div class="heading">
+                <h2>
+                    <!--<a class="heading1" href="#">Monthly Recap - December 2023</a>-->
+                    <span>Queens Day</span>
+                    <a class="more" href="media.html">More>></a>
+                </h2>
+            </div>
+        
+            <div class="inner_container">
+                <ul class="image-gallery">
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image7a.jpg" alt="image">                 
+                                  
+                            </div>
+                            <strong>IWD belongs to all the women wherever you are</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image8a.jpg" alt="image">  
+                            </div>
+                            <strong>Ugoccie&#039;s Women&#039;s day play list</strong>
+                        </a>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image9a.jpg" alt="image">    
+                            </div>
+                            <strong>A powerful mix curated by Kulupsy</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image10a.jpg" alt="image">        
+                            </div>
+                            <strong>Titi has been working hard to give a voice to women through music.</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image111a.jpg" alt="image">     
+                            </div>
+                            <strong>Ball Like Perpetua<strong>
+                    </li>
+        
+                    
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image1112a.jpg" alt="image">         
+                            </div>
+                            <strong>Stream the music about incredible women who broke barriers and made history</strong>
+                    </li>
+                </ul>
+            </div>
+        
+             <div class="heading">
+                <h2>
+                    <!--<a class="heading1" href="#">Monthly Recap - December 2023</a>-->
+                    <span>Gen-Z's Trends</span>
+                    <a class="more" href="media.html">More>></a>
+                </h2>
+            </div>
+        
+            <div class="inner_container">
+                <ul class="image-gallery">
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image13a.jpg" alt="image">                 
+                                  
+                            </div>
+                            <strong>Gen-Z Nostalgia</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image14a.jpg" alt="image">  
+                            </div>
+                            <strong>Gen Z | Underrated Kenyan Rappers </strong>
+                        </a>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image15a.jpg" alt="image">    
+                            </div>
+                            <strong>Gen Z Trending Alte Cruise</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image16a.jpg" alt="image">        
+                            </div>
+                            <strong>Gen Z In Trap We Trust</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image17a.jpg" alt="image">     
+                            </div>
+                            <strong>Gen Z Naija| Undergrond Music<strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image18a.jpg" alt="image">     
+                               
+                            </div>
+                            <strong>Gen - Z Next Rated | Naija</strong</strong>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="heading">
+                <h2>
+                    <!--<a class="heading1" href="#">Monthly Recap - December 2023</a>-->
+                    <span>Valentine's Season</span>
+                    <a class="more" href="media.html">More>></a>
+                </h2>
+            </div>
+        
+            <div class="inner_container">
+                <ul class="image-gallery">
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image21.jpg" alt="image">                 
+                                  
+                            </div>
+                            <strong>Our Love</strong>
+                    </li>
+        
+                    <li style="list-style: upper-roman">
+                            <div class="image">
+                                <img class="pic" src="images\image22.jpg" alt="image">  
+                            </div>
+                            <strong>Self Love</strong>
+                        </a>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image23.jpg" alt="image">    
+                            </div>
+                            <strong>Love You Die</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image24.jpg" alt="image">        
+                            </div>
+                            <strong>Roses &amp; Goodbye</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image25.jpg" alt="image">     
+                            </div>
+                            <strong>Breakfast Loading<strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image26.jpg" alt="image">     
+                               
+                            </div>
+                            <strong>God When?</strong>
+                    </li>
+                </ul>
+            </div>
+        
+           
+            <div class="heading">
+                <h2>
+                    <!--<a class="heading1" href="#">Monthly Recap - December 2023</a>-->
+                    <span>Curators' Playlists</span>
+                    <a class="more" href="media.html">More>></a>
+                </h2>
+            </div>
+        
+            <div class="inner_container">
+                <ul class="image-gallery">
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image27.jpg" alt="image">                 
+                                  
+                            </div>
+                            <strong>Afro Gospel</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image28.jpg" alt="image">  
+                            </div>
+                            <strong>Afrobeats See.NN</strong>
+                        </a>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image29.jpg" alt="image">    
+                            </div>
+                            <strong>Lucky Dube Birthday Playlist</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image30.jpg" alt="image">        
+                            </div>
+                            <strong>My Mom My Everything</strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image31.jpg" alt="image">     
+                            </div>
+                            <strong>Mboa Heat<strong>
+                    </li>
+        
+                    <li>
+                            <div class="image">
+                                <img class="pic" src="images\image32.jpg" alt="image"> 
+                            
+                                  
+                                    </div>    
+                               
+                           
+                            <strong>Mother's Day Relaxation</strong>
+                    </li>
+                </ul>
+            </div>
+        
+        
+            </section>
+            <!-- BEnding of Inner Section -->
+      
+             <!-- Begiining of Footer -->
+      
+            <footer>
+              <div class="footer-container">
+                <div class="flex-footer-cont">
+                  <div class="footer-section">
+                    <h1> Explore</h1>
+                    <p>Artist</p>
+                    <p>Trending Songs</p>
+                    <p>New Songs</p>
+                    <p>Charts</p>
+                    <p>Videos</p>
+                    <p>Podcast</p>
+                    <p>Buzz</p>
+                  </div>
+                  <div class="footer-section">
+                      <h1> For Users</h1>
+                      <p>Download</p>
+                      <p>Help Center</p>
+                      <p>Go premium</p>
+                      <p>Wordpress</p>
+                  </div>
+                  <div class="footer-section">
+                      <h1> For Artists and Vendors</h1>
+                      <P>Boomplay for Artists</P>
+                      <p>Get Verified</p>
+                      <p>Artist FAQ</p>
+                      <p>Artists Distributors</p>
+                      <p>Vendors Login</p>
+                  </div>
+                  <div class="footer-section">
+                      <h1> Company</h1>
+                      <P>About</P>
+                      <p>Contact</p>
+                      <p>Advertising</p>
+                      <p>News</p>
+                      <p>Visual Identity</p>
+                  </div>
+                </div>
+                <div class="social_footer">
+                  <div class="social_download">
+                    <img class="app" src="images/g.svg">
+                    <img class="app" src="images/a.svg">
+                  </div>
+                  <div class="social_media">
+                    <i class='bx bxl-facebook-circle'></i>
+                    <i class='bx bxl-twitter'></i>
+                    <i class='bx bxl-instagram'></i>
+                    <i class="fa-brands fa-youtube"></i>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="footer-bottom">
+               <p id="rights">&copy; 2023 Dev-Divas All rights reserved.</p>
+               <p>Privacy policy  |  EULA  |  Podcast T&C  | Sitemap</p>
+              </div>
+              
+          </footer>  
+           <!-- Ending of Footer -->
+      
+    </main>
+</div>
+<!-- Beginning of Player Section -->
+<section class="player">
+    <div>
+      <div class="slider"></div>
+      <div class="dot"></div>
+    </div>
 
-    <section class="container">
-      <div class="slider-wrapper">
-          <div class="slider">
-          <img id="slide1" src="./images/7.PNG" alt="Pic 1">
-          <img id="slide2" src="./images/2.png" alt="Pic 2">
-          <img id="slide3" src="./images/3.jpg" alt="Pic 3">
-          <img id="slide4" src="./images/4.jpg" alt="Pic 4">
-          <img id="slide5" src="./images/2.png" alt="Pic 5">
-          <img id="slide6" src="./images/7.png" alt="Pic 6">
-          <img id="slide7" src="./images/4.jpg" alt="Pic 7">
-          <img id="slide8" src="./images/3.jpg" alt="Pic 8">
+    <section class="mobile">
+      <div class="nowPlaying">
+        <article class="audioInfo">
+          <img src="./images/wind&fire.jpg" alt="ty_album_picture" />
+          <div class="names">
+            <p>Wind and Fire</p>
+            <p class="singerName">TY Bello</p>
+          </div>
+        </article>
+        <article class="audioControl">
+          <button><i class="bx bx-share-alt"></i></button>
+          <button><i class="fa-solid fa-circle-play"></i></button>
+        </article>
       </div>
-      <div class="slider-nav">
-          <a href="#slide1"></a>
-          <a href="#slide2"></a>
-          <a href="#slide3"></a>
-          <a href="#slide4"></a>
-          <a href="#slide5"></a>
-          <a href="#slide6"></a>
-          <a href="#slide7"></a>
-          <a href="#slide8 "></a>
-      </div>
-      </div>
-  </section>
-  <!-- INNER SECTIONS -->
+      <nav>
+        <button class="mobile-nav">
+          <img src="./images/icon_music_selected-TQWS55WV.svg" alt="boomplay-logo" />
+          <p>Music</p>
+        </button>
+        <button class="mobile-nav">
+          <i class="bx bx-search"></i>
+          <p>Search</p>
+        </button>
+        <button class="mobile-nav">
+          <i class="bx bxs-playlist"></i>
+          <p>Library</p>
+        </button>
+      </nav>
+    </section>
+    
 
-
-    <section class="content">
-      <div class="heading">
-          <h2>
-              <span>Hotlist</span>
-              <a class="more" href="media.html">More>></a>
-          </h2>
-      </div>
-  
-      <!-- Image Display Here-->
-      <div class="container">
-          <ul class="image-gallery">
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image1.jpg" alt="image">                 
-                            
-                      </div>
-                      <strong>Daily Trending</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image2.jpg" alt="image">  
-                      </div>
-                      <strong>Daily Hot List</strong>
-                  </a>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image3.jpg" alt="image">    
-                      </div>
-                      <strong>Afrobeats &amp; U</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image4.jpg" alt="image">        
-                      </div>
-                      <strong>Pop &amp; U</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image5.jpg" alt="image">     
-                      </div>
-                      <strong>RnB &amp; U</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image6.jpg" alt="image">     
-                         
-                      </div>
-                      <strong>Hip Hop &amp; U </strong>
-              </li>
-          </ul>
-      </div>
-  
-      <div class="heading">
-          <h2>
-              <!--<a class="heading1" href="#">Monthly Recap - December 2023</a>-->
-              <span>Monthly Recap - December 2023</span>
-              <a class="more" href="media.html">More>></a>
-          </h2>
-      </div>
-  
-      <div class="container">
-          <ul class="image-gallery">
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image7.jpg" alt="image">                 
-                            
-                      </div>
-                      <strong>Midweek Music</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image8.jpg" alt="image">  
-                      </div>
-                      <strong>Let Them Cook</strong>
-                  </a>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image9.jpg" alt="image">    
-                      </div>
-                      <strong>Top Yoruba Songs </strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image10.jpg" alt="image">        
-                      </div>
-                      <strong>Top Igbo Songs</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image11.jpg" alt="image">     
-                      </div>
-                      <strong>Hot Hausa Hits</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image12.jpg" alt="image">     
-                         
-                      </div>
-                      <strong>Hot Picks of The Week</strong>
-              </li>
-          </ul>
-      </div>
-  
-      <div class="heading">
-          <h2>
-              <!--<a class="heading1" href="#">Monthly Recap - December 2023</a>-->
-              <span>Weekly Charts</span>
-              <a class="more" href="media.html">More>></a>
-          </h2>
-      </div>
-  
-      <div class="container">
-          <ul class="image-gallery">
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image13.jpg" alt="image">                 
-                            
-                      </div>
-                      <strong>Top 100 Nigeria</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image14.jpg" alt="image">  
-                      </div>
-                      <strong>Top 100 Africa</strong>
-                  </a>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image15.jpg" alt="image">    
-                      </div>
-                      <strong>Top 100 International</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image16.jpg" alt="image">        
-                      </div>
-                      <strong>Top 100 Christian&amp;Gospel</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image17.jpg" alt="image">     
-                      </div>
-                      <strong>Top 100 Ghana<strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image18.jpg" alt="image">     
-                         
-                      </div>
-                      <strong>Top 100 Kenya</strong>
-              </li>
-          </ul>
-      </div>
-  
-      <div class="heading">
-          <h2>
-              <!--<a class="heading1" href="#">Monthly Recap - December 2023</a>-->
-              <span>Just Vibes</span>
-              <a class="more" href="media.html">More>></a>
-          </h2>
-      </div>
-  
-      <div class="container">
-          <ul class="image-gallery">
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image1.jpg" alt="image">                 
-                            
-                      </div>
-                      <strong>Sunday Praise</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image2.jpg" alt="image">  
-                      </div>
-                      <strong>Saturday Party</strong>
-                  </a>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image3.jpg" alt="image">    
-                      </div>
-                      <strong>Night Sleep</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image4.jpg" alt="image">        
-                      </div>
-                      <strong>Morning Yoga</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image5.jpg" alt="image">     
-                      </div>
-                      <strong>Workout Dance Mix<strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image6.jpg" alt="image">     
-                         
-                      </div>
-                      <strong>Wedding Love Songs Mix</strong>
-              </li>
-          </ul>
-      </div>
-  
-       <div class="heading">
-          <h2>
-              <!--<a class="heading1" href="#">Monthly Recap - December 2023</a>-->
-              <span>Queens Day</span>
-              <a class="more" href="media.html">More>></a>
-          </h2>
-      </div>
-  
-      <div class="container">
-          <ul class="image-gallery">
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image7.jpg" alt="image">                 
-                            
-                      </div>
-                      <strong>IWD belongs to all the women wherever you are</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image8.jpg" alt="image">  
-                      </div>
-                      <strong>Ugoccie&#039;s Women&#039;s day play list</strong>
-                  </a>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image9.jpg" alt="image">    
-                      </div>
-                      <strong>A powerful mix curated by Kulupsy</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image10.jpg" alt="image">        
-                      </div>
-                      <strong>Titi has been working hard to give a voice to women through music.</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image111.jpg" alt="image">     
-                      </div>
-                      <strong>Ball Like Perpetua<strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image1112.jpg" alt="image">     
-                         
-                      </div>
-                      <strong>Stream the music about incredible women who broke barriers and made history</strong</strong>
-              </li>
-          </ul>
-      </div>
-  
-       <div class="heading">
-          <h2>
-              <!--<a class="heading1" href="#">Monthly Recap - December 2023</a>-->
-              <span>Gen-Z's Trends</span>
-              <a class="more" href="media.html">More>></a>
-          </h2>
-      </div>
-  
-      <div class="container">
-          <ul class="image-gallery">
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image13.jpg" alt="image">                 
-                            
-                      </div>
-                      <strong>Gen-Z Nostalgia</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image14.jpg" alt="image">  
-                      </div>
-                      <strong>Gen Z | Underrated Kenyan Rappers </strong>
-                  </a>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image15.jpg" alt="image">    
-                      </div>
-                      <strong>Gen Z Trending Alte Cruise</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image16.jpg" alt="image">        
-                      </div>
-                      <strong>Gen Z In Trap We Trust</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image17.jpg" alt="image">     
-                      </div>
-                      <strong>Gen Z Naija| Undergrond Music<strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="image2\image18.jpg" alt="image">     
-                         
-                      </div>
-                      <strong>Gen - Z Next Rated | Naija</strong</strong>
-              </li>
-          </ul>
-      </div>
-  
-      <div class="heading">
-          <h2>
-              <!--<a class="heading1" href="#">Monthly Recap - December 2023</a>-->
-              <span>Valentine's Season</span>
-              <a class="more" href="media.html">More>></a>
-          </h2>
-      </div>
-  
-      <div class="container">
-          <ul class="image-gallery">
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image21.jpg" alt="image">                 
-                            
-                      </div>
-                      <strong>Our Love</strong>
-              </li>
-  
-              <li style="list-style: upper-roman">
-                      <div class="image">
-                          <img class="pic" src="images\image22.jpg" alt="image">  
-                      </div>
-                      <strong>Self Love</strong>
-                  </a>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image23.jpg" alt="image">    
-                      </div>
-                      <strong>Love You Die</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image24.jpg" alt="image">        
-                      </div>
-                      <strong>Roses &amp; Goodbye</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image25.jpg" alt="image">     
-                      </div>
-                      <strong>Breakfast Loading<strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image26.jpg" alt="image">     
-                         
-                      </div>
-                      <strong>God When?</strong>
-              </li>
-          </ul>
-      </div>
-  
-     
-      <div class="heading">
-          <h2>
-              <!--<a class="heading1" href="#">Monthly Recap - December 2023</a>-->
-              <span>Curators' Playlists</span>
-              <a class="more" href="media.html">More>></a>
-          </h2>
-      </div>
-  
-      <div class="container">
-          <ul class="image-gallery">
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image27.jpg" alt="image">                 
-                            
-                      </div>
-                      <strong>Afro Gospel</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image28.jpg" alt="image">  
-                      </div>
-                      <strong>Afrobeats See.NN</strong>
-                  </a>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image29.jpg" alt="image">    
-                      </div>
-                      <strong>Lucky Dube Birthday Playlist</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image30.jpg" alt="image">        
-                      </div>
-                      <strong>My Mom My Everything</strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image31.jpg" alt="image">     
-                      </div>
-                      <strong>Mboa Heat<strong>
-              </li>
-  
-              <li>
-                      <div class="image">
-                          <img class="pic" src="images\image32.jpg" alt="image"> 
-                      
-                            
-                              </div>    
-                         
-                     
-                      <strong>Mother's Day Relaxation</strong>
-              </li>
-          </ul>
-      </div>
-  
-  
-      </section>
-    <footer>
-      <div>
-        <div class="slider"></div>
-        <div class="dot"></div>
-      </div>
-
-      <section class="mobile">
-        <div class="nowPlaying">
+    <section class="desktop deskOperation">
+      <div class="operation">
+        <div class="withoutTimer">
           <article class="audioInfo">
             <img src="./images/wind&fire.jpg" alt="ty_album_picture" />
             <div class="names">
               <p>Wind and Fire</p>
-              <p class="singerName">TY Bello</p>
+              <p class="singerName">Ty Bello</p>
             </div>
           </article>
           <article class="audioControl">
-            <button><i class="bx bx-share-alt"></i></button>
+            <button><i class="fa-solid fa-backward-step"></i></button>
             <button><i class="fa-solid fa-circle-play"></i></button>
+            <button><i class="fa-solid fa-forward-step"></i></button>
+          </article>
+          <article class="playOperation">
+            <!-- DO NOT DELETE MODE DIV -->
+            <!-- <div class="mode">
+            <button><i class="fa-solid fa-shuffle"></i></button>
+            <button>
+              <i class="bx bx-sort bx-rotate-90"></i>
+            </button>
+            <button><i class="fa-solid fa-repeat">1</i></button>
+          </div> -->
+            <button><i class="fa-solid fa-repeat"></i></button>
+            <button><i class="bx bx-import"></i></button>
+            <button><i class="bx bx-heart"></i></button>
+            <button><i class="bx bx-share-alt"></i></button>
+            <button>
+              <i class="bx bxs-playlist"></i>
+            </button>
+            <button><i class="fa-regular fa-square-plus"></i></button>
           </article>
         </div>
-        <nav>
-          <button class="mobile-nav">
-            <img src="./images/icon_music_selected-TQWS55WV.svg" alt="boomplay-logo" />
-            <p>Music</p>
-          </button>
-          <button class="mobile-nav">
-            <i class="bx bx-search"></i>
-            <p>Search</p>
-          </button>
-          <button class="mobile-nav">
-            <i class="bx bxs-playlist"></i>
-            <p>Library</p>
-          </button>
-        </nav>
-      </section>
-      
-
-      <section class="desktop deskOperation">
-        <div class="operation">
-          <div class="withoutTimer">
-            <article class="audioInfo">
-              <img src="./images/wind&fire.jpg" alt="ty_album_picture" />
-              <div class="names">
-                <p>Wind and Fire</p>
-                <p class="singerName">Ty Bello</p>
-              </div>
-            </article>
-            <article class="audioControl">
-              <button><i class="fa-solid fa-backward-step"></i></button>
-              <button><i class="fa-solid fa-circle-play"></i></button>
-              <button><i class="fa-solid fa-forward-step"></i></button>
-            </article>
-            <article class="playOperation">
-              <!-- DO NOT DELETE MODE DIV -->
-              <!-- <div class="mode">
-              <button><i class="fa-solid fa-shuffle"></i></button>
-              <button>
-                <i class="bx bx-sort bx-rotate-90"></i>
-              </button>
-              <button><i class="fa-solid fa-repeat">1</i></button>
-            </div> -->
-              <button><i class="fa-solid fa-repeat"></i></button>
-              <button><i class="bx bx-import"></i></button>
-              <button><i class="bx bx-heart"></i></button>
-              <button><i class="bx bx-share-alt"></i></button>
-              <button>
-                <i class="bx bxs-playlist"></i>
-              </button>
-              <button><i class="fa-regular fa-square-plus"></i></button>
-            </article>
-          </div>
-          <div class="timer">
-            <p class="currentTime">00:00</p>
-            <p class="between">/</p>
-            <p class="duration">03:50</p>
-          </div>
+        <div class="timer">
+          <p class="currentTime">00:00</p>
+          <p class="between">/</p>
+          <p class="duration">03:50</p>
         </div>
-        <button class="playerRetract">
-          <i class="fa-solid fa-angle-down"></i>
-        </button>
-      </section>
-    </footer>
+      </div>
+      <button class="playerRetract">
+        <i class="fa-solid fa-angle-down"></i>
+      </button>
+    </section>
+</section>
+<!-- Ending of Player Section -->
 
-
-
-
-
-  <div class="log-container">
+<div class="log-container">
     <a href="index.html" class="backdrop"></a>
     <div class="content-form">
   
