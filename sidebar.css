@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    background-color: black;
+}
+.top-nav{
+    padding: 1em 2em;
+}
+input{
+    position: absolute;
+    top: 0;
+    transform: translateX(-100px);
+}
+.toggle-icon{
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked  ~  .sidebar{
+    transform: translateX(0);
+}
+
+.sidebar {
+    position: absolute;
+    left: 0;
+    top: 62px;
+    width: 220px;
+    background-color: #0d0d0d;
+    -ms-overflow-style: none;
+    display: grid;
+    place-items: center;
+    font-size: .9rem;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
+    padding-top: 1em;
+}
+
+
+
+.login_info, a{
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+.text{
+    display: flex;
+    gap: 1rem;
+}
+button {
+    margin-top: 1em;
+    padding: .8em 2em;
+    border-radius: 100px;
+    color: #463402;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    background: linear-gradient(133.3deg,rgba(254,234,205,1) 0%,rgba(251,206,132,1) 100%);
+}
+.side-nav{
+    display: grid;
+    gap: 1rem;
+    margin-top: 1em;
+}
+.side-nav section{
+    display: grid;
+    gap: 1rem;
+}
+.nav_home{
+    color: #00ffff;
+}
+.side-nav a:hover{
+    color: #00ffff;
+}
+.second div{
+    color: #fff;
+    cursor: pointer;
+}
+
+@media(min-width:610px){
+    .toggle-icon{
+        display:none ;
+    }
+    .sidebar{
+        transform: translateX(0px);
+    }
+}
