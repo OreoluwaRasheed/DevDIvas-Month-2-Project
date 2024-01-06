@@ -1,19 +1,26 @@
-* {
-  padding: 0;
-  margin: 0;
+html {
   box-sizing: border-box;
+  width: 100%;
 }
 
-body,
-html {
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
   font-family: "Nunito Sans", sans-serif;
-  overflow-x: hidden;
-  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
 }
 
 .body {
   display: flex;
   padding-bottom: 80px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 aside {
@@ -22,6 +29,7 @@ aside {
   display: flex;
   flex-flow: column wrap;
   overflow-y: hidden;
+  flex-shrink: 0;
 }
 
 main {
@@ -61,6 +69,7 @@ main .mobile {
   }
 
   .header-btn {
+    margin: 7px;
     background-color: #00ffff;
     color: #121212;
     font-size: 16px;
@@ -98,23 +107,24 @@ main .mobile {
 
 }
 
+main nav {
+  display: flex;
+  width: 100%;
+  padding: 15px;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid #ffffff1f;
+}
 
 .header-left {
   display: flex;
   width: 50%;
+  flex-shrink: 3;
 }
 
 .header-right {
   display: flex;
-  gap: 3rem;
-  align-items: center;
-}
-
-main nav {
-  display: flex;
-  padding: 15px;
-  justify-content: space-between;
-  border-bottom: 1px solid #ffffff1f;
+  gap: 0;
 }
 
 .nav-search {
@@ -698,7 +708,11 @@ footer {
   border-bottom: 1px solid #ffffff1f;
 }
 
-.flex-footer-cont {
+.flex-footer-cont-mobile {
+  display: none;
+}
+
+.flex-footer-cont-dt {
   flex-basis: 70%;
   display: flex;
   justify-content: space-between;
@@ -713,6 +727,7 @@ footer {
 }
 
 .footer-section p {
+  display: block;
   color: #ffffff99;
   font-size: 14px;
   text-align: start;
@@ -907,7 +922,11 @@ footer {
     border-bottom: none;
   }
 
-  .flex-footer-cont {
+  .flex-footer-cont-dt {
+    display: none;
+  }
+
+  .flex-footer-cont-mobile {
     flex-basis: 100%;
     display: flex;
     flex-flow: column;
@@ -918,16 +937,45 @@ footer {
     justify-content: start;
   }
 
-  .footer-section p {
-    display: none;
+  details>summary {
+    list-style: none;
   }
 
-  .footer-section h1 {
+  summary::marker {
+    display: none
+  }
+
+  .footer-section summary {
     color: #fff;
     font-size: 26px;
     margin: 0 0 5px 0;
     font-weight: 500;
     padding: 25px 0;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  summary::after {
+    content: ' \02C5 ';
+    font-size: 26px;
+    height: 10px;
+    color: #b4a3a3;
+  }
+
+  .footContent {
+    display: none;
+  }
+
+  details[open] summary::after {
+    transform: rotate(180deg);
+    width: 18px;
+    height: 10px;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
   }
 
   .social_footer {
@@ -987,9 +1035,32 @@ footer {
   #rights {
     color: white;
   }
-
-
 }
+
+@media (max-width:590px) {
+  .header-btn {
+    margin: 7px;
+    background-color: #000;
+    color: #fff;
+    padding: 6px 10px;
+    right: 1.46rem;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid #fff;
+    white-space: nowrap;
+    border-radius: 1.5rem;
+    -webkit-border-radius: 1.5rem;
+    -moz-border-radius: 1.5rem;
+    -ms-border-radius: 1.5rem;
+    -o-border-radius: 1.5rem;
+  }
+
+  .image img {
+    width: 180px;
+  }
+}
+
 
 /* BEGINING OF LOGIN STYLING*/
 
@@ -1496,12 +1567,6 @@ footer {
 }
 
 /* ENDING OF SIGN UP STYLING*/
-
-@media (max-width: 1000px) {
-  .btcoin-btn {
-    display: none;
-  }
-}
 
 @media (max-width: 700px) {
   .nav-search {
