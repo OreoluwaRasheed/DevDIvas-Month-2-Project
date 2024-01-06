@@ -1,26 +1,19 @@
-html {
-  box-sizing: border-box;
-  width: 100%;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-body {
-  font-family: "Nunito Sans", sans-serif;
+* {
   padding: 0;
   margin: 0;
-  width: 100vw;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: "Nunito Sans", sans-serif;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .body {
   display: flex;
   padding-bottom: 80px;
-  width: 100%;
-  overflow-x: hidden;
 }
 
 aside {
@@ -44,7 +37,7 @@ main {
 }
 
 .image img {
-  width: 170px;
+  width: 165px;
 }
 
 .side_content {
@@ -69,7 +62,7 @@ main .mobile {
   }
 
   .header-btn {
-    margin: 7px;
+    margin: 0 7px;
     background-color: #00ffff;
     color: #121212;
     font-size: 16px;
@@ -345,6 +338,7 @@ p {
 
   /* Mobile playerstyling */
   .nowPlaying {
+    width: 100vw;
     display: flex;
     justify-content: space-between;
     border-top: 0.5px #bababa solid;
@@ -937,6 +931,10 @@ footer {
     justify-content: start;
   }
 
+  .footer-section p {
+    font-size: 20px;
+  }
+
   details>summary {
     list-style: none;
   }
@@ -961,7 +959,7 @@ footer {
     content: ' \02C5 ';
     font-size: 26px;
     height: 10px;
-    color: #b4a3a3;
+    color: #aa9f9f;
   }
 
   .footContent {
@@ -1475,13 +1473,16 @@ footer {
 .log-container .term label:before {
   content: "";
   display: inline-block;
-
   transform: translateY(-50%);
   width: 15px;
   height: 15px;
   border: 2px solid grey;
   border-radius: 50%;
   margin-top: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 .log-container .term input[type="checkbox"]:checked+label:before {
